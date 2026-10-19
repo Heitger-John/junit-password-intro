@@ -63,4 +63,15 @@ public class PasswordUtilsTest {
         //assert
         assertEquals(false, actual);
     }
+
+    @Test
+    void testContainsTripleconsecutiveLetters()
+    {
+        String password = "paaassword";
+
+        char actual = PasswordUtils.containsTriple(password);
+
+        assertEquals('a', actual);
+
+    }
 }
