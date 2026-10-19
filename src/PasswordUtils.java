@@ -1,6 +1,9 @@
 /**
  * Utility class for analyzing passwords.
  */
+
+import java.util.Map;
+import java.util.HashMap;
 public class PasswordUtils {
 
     /**
@@ -54,21 +57,16 @@ public class PasswordUtils {
     // TODO: Make tests FIRST, then implement the method
     // Please have your tests in a separate commit from the implementation
     int count = 0;
-    for (int i = 0; i < password.length() - 1; i++)
+    for (int i = 0; i < password.length(); i++)
     {
-        char compare = password.charAt(i);
-        char compareTwo = password.charAt(i + 1);
-        if (compare == compareTwo)
+        char c = password.charAt(i);
+        if(c == password.charAt(i + 1))
         {
             count++;
         }
         if (count == 3)
         {
             return true;
-        }
-        else
-        {
-            count = 0;
         }
 
     }
