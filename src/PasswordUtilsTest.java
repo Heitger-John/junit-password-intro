@@ -76,12 +76,22 @@ public class PasswordUtilsTest {
     }
 
     @Test
-    void TestContainsTwoInstancesOfConsecutiveletters()
+    void testContainsTwoInstancesOfConsecutiveletters()
     {
         String password = "paaasssword";
 
         boolean actual = PasswordUtils.containsTriple(password);
 
         assertEquals(true, actual);
+    }
+    
+    @Test
+    void testCountSpecialCharactersAndCheckIfNone()
+    {
+        String password = "password";
+
+        int actual = PasswordUtils.countSpecialCharacters(password);
+
+        assertEquals(0, actual);
     }
 }
