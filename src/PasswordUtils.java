@@ -33,14 +33,13 @@ public class PasswordUtils {
      * @return true if the password is alphanumeric, false otherwise
      */
     public static boolean isAlphanumeric(String password) {
-        boolean flag = true;
-        for (int i = 0; i < password.length() - 1; i++) {
+        for (int i = 0; i <= password.length() - 1; i++) {
             char c = password.charAt(i);
             if (!Character.isLetterOrDigit(c)) {
-                flag = !flag;
+                return false;
             }
         }
-        return flag;
+        return true;
     }
 
 }

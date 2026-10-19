@@ -57,7 +57,7 @@ public class PasswordUtilsTest {
     void testIsAlphaNumericSpecialCharacterAtEndOfPassword()
     {
         //arrange
-        String password = "1233578!";
+        String password = "123357)";
         //act
         boolean actual = PasswordUtils.isAlphanumeric(password);
         //assert
