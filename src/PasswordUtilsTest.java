@@ -84,7 +84,7 @@ public class PasswordUtilsTest {
 
         assertEquals(true, actual);
     }
-    
+
     @Test
     void testCountSpecialCharactersAndCheckIfNone()
     {
@@ -93,5 +93,16 @@ public class PasswordUtilsTest {
         int actual = PasswordUtils.countSpecialCharacters(password);
 
         assertEquals(0, actual);
+    }
+
+    @Test
+    void testCountSpecialCharactersWithScatteringOfSpecialCharacters()
+    {
+        String password = "pas!sw#or%d";
+
+        int actual = PasswordUtils.countSpecialCharacters(password);
+
+        assertEquals(3, actual);
+
     }
 }
