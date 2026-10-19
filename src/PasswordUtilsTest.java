@@ -41,7 +41,7 @@ public class PasswordUtilsTest {
     }
 
     @Test
-    void testIsAlphaNumeric()
+    void testIsAlphaNumericSpecialCharacterInMiddleOfPassword()
     {
         //arrange
         String password = "Fa!f1gj";
@@ -49,6 +49,17 @@ public class PasswordUtilsTest {
         //act
         boolean actual = PasswordUtils.isAlphanumeric(password);
 
+        //assert
+        assertEquals(false, actual);
+    }
+
+    @Test
+    void testIsAlphaNumericSpecialCharacterAtEndOfPassword()
+    {
+        //arrange
+        String password = "1233578!";
+        //act
+        boolean actual = PasswordUtils.isAlphanumeric(password);
         //assert
         assertEquals(false, actual);
     }
