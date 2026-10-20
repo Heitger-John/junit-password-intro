@@ -105,4 +105,16 @@ public class PasswordUtilsTest {
         assertEquals(3, actual);
 
     }
+
+    @Test
+    void testMinimumTwoSpecialCharacters()
+    {
+        String password = "pass&wo*rd";
+
+        boolean actual = PasswordUtils.hasSufficientSpecialCharacters(password, 2);
+
+        assertEquals(true, actual);
+    }
+
+    
 }
